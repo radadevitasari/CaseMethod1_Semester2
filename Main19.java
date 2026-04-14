@@ -37,6 +37,7 @@ public class Main19 {
             System.out.println("3. Tampilkan Peminjaman");
             System.out.println("4. Urutkan Berdasarkan Denda");
             System.out.println("5. Cari Berdasarkan NIM");
+            System.out.println("6. Mahasiswa Meminjam > 1 Buku");
             System.out.println("0. Keluar");
             System.out.print("Pilih: ");
             pilih = sc.nextInt();
@@ -106,7 +107,23 @@ public class Main19 {
                         System.out.println("Data tidak ditemukan!");
                     }
                     break;
+                case 6:
+                    System.out.println("\nMahasiswa yang meminjam lebih dari 1 buku:");
 
+                    for (int i = 0; i < mhs.length; i++) {
+                         int jumlah = 0;
+
+                    for (ClassPeminjaman19 p : pinjam) {
+                         if (p.mhs.nim.equals(mhs[i].nim)) {
+                      jumlah++;
+                     }
+        }
+                 if (jumlah > 1) {
+                     System.out.println(mhs[i].nim + " | " + mhs[i].nama + " | Jumlah Pinjam: " + jumlah);
+                 }
+                }
+                break;
+                    
                 case 0:
                     System.out.println("Terima kasih!");
                     break;
@@ -118,3 +135,4 @@ public class Main19 {
         } while (pilih != 0);
     }
 }
+
